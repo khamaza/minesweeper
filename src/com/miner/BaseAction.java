@@ -14,9 +14,9 @@ public class BaseAction implements UserAction {
     @Override
     public void initGame() {
         final Cell[][] cells = generatorBoard.generate(
-                Constants.EASY_GAME_ROW_COUNT,
-                Constants.EASY_GAME_COLUMN_COUNT,
-                Constants.EASY_GAME_BOMB_COUNT
+                minerLogic.getRowNumber(),
+                minerLogic.getColumnNumber(),
+                minerLogic.getBombNumber()
         );
         this.board.setCells(cells);
         this.minerLogic.loadBoard(cells);
