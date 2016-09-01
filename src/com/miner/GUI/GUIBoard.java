@@ -40,7 +40,6 @@ public class GUIBoard extends JPanel implements Board  {
     @Override
     public void drawGameOver() {
         UIManager.put("OptionPane.okButtonText", "Yes!");
-
         JOptionPane.showMessageDialog(null, "You lose! Try again?", "Ouch!", JOptionPane.QUESTION_MESSAGE);
     }
 

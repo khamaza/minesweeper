@@ -28,9 +28,11 @@ public class BaseAction implements UserAction {
         board.redraw();
         if (this.minerLogic.shouldBang(x, y)) {
             this.board.drawGameOver();
+            this.initGame();
         }
         if (this.minerLogic.finish()) {
             this.board.drawCongratulate();
+            this.initGame();
         }
     }
 }
