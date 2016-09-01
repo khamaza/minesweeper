@@ -9,6 +9,7 @@ public abstract class Common implements MinerLogic {
     @Override
     public void loadBoard(Cell[][] cells) {
         this.cells = cells;
+        this.updateSafetySuggestionNumber();
     }
 
     public int getBombNumberOnAdjacentCells(int x, int y) {

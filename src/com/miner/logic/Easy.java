@@ -1,12 +1,13 @@
 package com.miner.logic;
 
+import com.miner.Cell;
 import com.miner.Constants;
 
 public class Easy extends Common {
     private static final int BOMB_COUNT = 20;
     private static final int COLUMN_COUNT = 10;
     private static final int EASY_GAME = 10;
-    private int safetySuggestionNumber = 3;
+    private int safetySuggestionNumber;
 
     @Override
     public int getRowNumber() { return this.EASY_GAME; }
@@ -16,6 +17,11 @@ public class Easy extends Common {
 
     @Override
     public int getBombNumber() { return this.BOMB_COUNT; }
+
+    @Override
+    public void updateSafetySuggestionNumber() {
+        this.safetySuggestionNumber = 3;
+    }
 
     @Override
     public boolean shouldBang(int x, int y) {
