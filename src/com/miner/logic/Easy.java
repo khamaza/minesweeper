@@ -48,32 +48,4 @@ public class Easy extends Common {
                 break;
         }
     }
-
-    private void makeSuggestionSafety(int x, int y) {
-        if (!cells[x][y].isBomb()) return;
-
-        for (int i=0; i<cells.length; i++) {
-            for (int j=0; j<cells[i].length; j++) {
-                if (!cells[i][j].isBomb() && !cells[i][j].isSuggestEmpty())
-                {
-                    cells[i][j].markAsBomb();
-                    cells[x][y].markAsEmpty();
-                    return;
-                }
-            }
-        }
-    }
-
-    @Override
-    public boolean finish() {
-        for (int x=0; x<cells.length; x++) {
-            for (int y=0; y<cells[0].length; y++) {
-                if ((cells[x][y].isBomb() && cells[x][y].isSuggestBomb()) ||
-                        !cells[x][y].isBomb() && cells[x][y].isSuggestEmpty())
-                    continue;
-                else return false;
-            }
-        }
-        return true;
-    }
 }
