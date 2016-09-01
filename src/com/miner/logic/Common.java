@@ -23,6 +23,10 @@ public abstract class Common implements MinerLogic {
                 if (!cells[x][y].isBomb()) {
                     cells[x][y].setBombNumberOnAdjacentCells(getBombNumberOnAdjacentCells(x, y));
                 }
+                break;
+            case UNKNOWN:
+                cells[x][y].suggestUnknown();
+                break;
             default:
                 break;
         }

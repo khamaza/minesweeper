@@ -6,6 +6,7 @@ public final class Constants {
 
     public enum SUGGESTION {
         BOMB,
-        EMPTY
+        EMPTY,
+        UNKNOWN
     }
 }

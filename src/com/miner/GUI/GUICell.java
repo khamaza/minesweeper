@@ -60,6 +60,12 @@ public class GUICell implements Cell<Graphics> {
     }
 
     @Override
+    public void suggestUnknown() {
+        isSuggestedBomb=false;
+        isSuggestedEmpty=false;
+    }
+
+    @Override
     public void draw(Graphics paint) {
         if (this.isSuggestedBomb) {
             Image image = new ImageIcon(this.getClass().getResource("/com/miner/GUI/drawable/flag.png")).getImage();

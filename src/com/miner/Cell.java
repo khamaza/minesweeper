@@ -11,5 +11,6 @@ public interface Cell<T> {
     void markAsBomb();
     void suggestBomb();
     void suggestEmpty();
+    void suggestUnknown();
     void draw(T paint);
 }

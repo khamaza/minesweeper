@@ -43,8 +43,6 @@ public class Main {
                     }
                 });
 
-                board.setBorder(new EmptyBorder(100, 100, 100, 100));
-
                 guiAction = new GUIAction(generatorBoard, board, minerLogic);
                 guiAction.initGame();
 
@@ -62,7 +60,6 @@ public class Main {
         newGameMenuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                guiAction = new GUIAction(generatorBoard, board, minerLogic);
                 guiAction.initGame();
             }
         });

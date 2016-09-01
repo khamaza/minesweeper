@@ -42,7 +42,8 @@ public class GUIAction extends BaseAction implements ActionListener, MouseListen
             this.select(x,y, Constants.SUGGESTION.EMPTY);
         }
         else if (e.getButton()==MouseEvent.BUTTON3) {
-            this.select(x,y, Constants.SUGGESTION.BOMB);
+            if (this.board.cells[x][y].isSuggestBomb()) this.select(x, y, Constants.SUGGESTION.UNKNOWN);
+            else this.select(x,y, Constants.SUGGESTION.BOMB);
         }
 
         board.repaint();
