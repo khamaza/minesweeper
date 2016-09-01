@@ -22,7 +22,7 @@ public class GUIGeneratorBoard implements GeneratorBoard{
         this.fillWithBombs(cells, bombNumber);
 
         return cells;
-    };
+    }
 
     //todo: optimize the algorithm
     private void fillWithBombs(GUICell[][] cells, int bombNumber) {

@@ -9,6 +9,7 @@ public interface Cell<T> {
     boolean isSuggestEmpty();
     void setBombNumberOnAdjacentCells(int number);
     void markAsBomb();
+    void markAsEmpty();
     void suggestBomb();
     void suggestEmpty();
     void suggestUnknown();

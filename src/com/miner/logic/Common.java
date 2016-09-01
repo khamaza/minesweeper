@@ -1,7 +1,6 @@
 package com.miner.logic;
 
 import com.miner.Cell;
-import com.miner.Constants;
 import com.miner.MinerLogic;
 
 public abstract class Common implements MinerLogic {
@@ -10,26 +9,6 @@ public abstract class Common implements MinerLogic {
     @Override
     public void loadBoard(Cell[][] cells) {
         this.cells = cells;
-    }
-
-    @Override
-    public void suggest(int x, int y, Constants.SUGGESTION suggestion) {
-        switch (suggestion) {
-            case BOMB:
-                this.cells[x][y].suggestBomb();
-                break;
-            case EMPTY:
-                cells[x][y].suggestEmpty();
-                if (!cells[x][y].isBomb()) {
-                    cells[x][y].setBombNumberOnAdjacentCells(getBombNumberOnAdjacentCells(x, y));
-                }
-                break;
-            case UNKNOWN:
-                cells[x][y].suggestUnknown();
-                break;
-            default:
-                break;
-        }
     }
 
     public int getBombNumberOnAdjacentCells(int x, int y) {

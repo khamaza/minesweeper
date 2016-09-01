@@ -33,6 +33,9 @@ public class GUICell implements Cell<Graphics> {
     }
 
     @Override
+    public void markAsEmpty() { this.isBomb = false; }
+
+    @Override
     public boolean isSuggestBomb() {
         return isSuggestedBomb;
     }
