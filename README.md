@@ -1,5 +1,4 @@
 # javaMiner
-Java Miner project special for smartbear.
 
 <b>Game process:</b>
 <br>
