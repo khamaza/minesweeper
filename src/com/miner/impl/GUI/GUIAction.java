@@ -5,20 +5,18 @@ import com.miner.impl.base.BaseAction;
 import com.miner.interfaces.GeneratorBoard;
 import com.miner.interfaces.MinerLogic;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 import static com.miner.Constants.CELL_PADDING;
 
-public class GUIAction extends BaseAction implements ActionListener, MouseListener {
+public class GUIAction extends BaseAction implements ActionListener, MouseListener, HotKeyListener {
     private GUIBoard board;
 
     public GUIAction(GeneratorBoard generatorBoard, GUIBoard board, MinerLogic minerLogic) {
         super(generatorBoard, board, minerLogic);
         this.board = board;
         this.board.addMouseListener(this);
+        this.board.setEventListener(this);
     }
 
     @Override
@@ -61,5 +59,14 @@ public class GUIAction extends BaseAction implements ActionListener, MouseListen
     @Override
     public void actionPerformed(ActionEvent e) {
         this.initGame();
+    }
+
+    @Override
+    public void onKeyPressed(KeyEvent e) {
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_N:
+                this.initGame();
+                break;
+        }
     }
 }

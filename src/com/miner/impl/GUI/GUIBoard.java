@@ -5,11 +5,14 @@ import com.miner.interfaces.Cell;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import static com.miner.Constants.CELL_PADDING;
 
 public class GUIBoard extends JPanel implements Board  {
     public Cell<Graphics>[][] cells;
+    HotKeyListener hotKeyListener = null;
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -24,6 +27,21 @@ public class GUIBoard extends JPanel implements Board  {
                 }
             }
         }
+    }
+
+    public GUIBoard() {
+        this.setFocusable(true);
+        this.requestFocus();
+        this.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (hotKeyListener!=null) hotKeyListener.onKeyPressed(e);
+            }
+        });
+    }
+
+    public void setEventListener(HotKeyListener hotKeyListener) {
+        this.hotKeyListener = hotKeyListener;
     }
 
     @Override
