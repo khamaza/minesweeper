@@ -1,9 +1,9 @@
-package com.miner.logic;
+package com.miner.impl.base;
 
-import com.miner.Cell;
-import com.miner.MinerLogic;
+import com.miner.interfaces.Cell;
+import com.miner.interfaces.MinerLogic;
 
-public abstract class Common implements MinerLogic {
+public abstract class BaseLogic implements MinerLogic {
     protected Cell[][] cells;
 
     @Override
@@ -13,7 +13,6 @@ public abstract class Common implements MinerLogic {
     }
 
     public int getBombNumberOnAdjacentCells(int x, int y) {
-
         int counter=0;
 
         if (x-1 >= 0)

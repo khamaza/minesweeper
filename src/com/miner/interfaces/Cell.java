@@ -1,4 +1,4 @@
-package com.miner;
+package com.miner.interfaces;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

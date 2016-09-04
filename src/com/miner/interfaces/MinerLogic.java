@@ -1,10 +1,11 @@
-package com.miner;
+package com.miner.interfaces;
+
+import com.miner.Constants;
 
 public interface MinerLogic {
     void loadBoard(Cell[][] cells);
     void suggest(int x, int y, Constants.SUGGESTION suggestion);
     void updateSafetySuggestionNumber();
-    int getBombNumberOnAdjacentCells(int x, int y);
     int getRowNumber();
     int getColumnNumber();
     int getBombNumber();

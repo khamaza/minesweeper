@@ -1,6 +1,9 @@
-package com.miner.GUI;
+package com.miner.impl.GUI;
 
 import com.miner.*;
+import com.miner.impl.base.BaseAction;
+import com.miner.interfaces.GeneratorBoard;
+import com.miner.interfaces.MinerLogic;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

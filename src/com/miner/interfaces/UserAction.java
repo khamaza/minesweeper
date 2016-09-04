@@ -1,4 +1,6 @@
-package com.miner;
+package com.miner.interfaces;
+
+import com.miner.Constants;
 
 public interface UserAction {
     void initGame();

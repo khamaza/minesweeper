@@ -1,16 +1,11 @@
-package com.miner.GUI;
+package com.miner.impl.GUI;
 
-import com.miner.GeneratorBoard;
-import com.miner.MinerLogic;
+import com.miner.interfaces.GeneratorBoard;
+import com.miner.interfaces.MinerLogic;
 import com.miner.logic.Easy;
 import com.miner.utils.ScreenUtils;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import javax.swing.event.MenuEvent;
-import javax.swing.event.MenuKeyEvent;
-import javax.swing.event.MenuKeyListener;
-import javax.swing.event.MenuListener;
 import java.awt.*;
 import java.awt.event.*;
 

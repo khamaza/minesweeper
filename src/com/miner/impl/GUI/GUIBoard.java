@@ -1,7 +1,7 @@
-package com.miner.GUI;
+package com.miner.impl.GUI;
 
-import com.miner.Board;
-import com.miner.Cell;
+import com.miner.interfaces.Board;
+import com.miner.interfaces.Cell;
 
 import javax.swing.*;
 import java.awt.*;

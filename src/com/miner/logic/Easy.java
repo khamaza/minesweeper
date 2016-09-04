@@ -1,9 +1,9 @@
 package com.miner.logic;
 
-import com.miner.Cell;
+import com.miner.impl.base.BaseLogic;
 import com.miner.Constants;
 
-public class Easy extends Common {
+public class Easy extends BaseLogic {
     private static final int BOMB_COUNT = 20;
     private static final int COLUMN_COUNT = 10;
     private static final int EASY_GAME = 10;
@@ -44,7 +44,7 @@ public class Easy extends Common {
                 }
                 cells[x][y].suggestEmpty();
                 if (!cells[x][y].isBomb()) {
-                    cells[x][y].setBombNumberOnAdjacentCells(getBombNumberOnAdjacentCells(x, y));
+                    cells[x][y].setBombNumberOnAdjacentCells(this.getBombNumberOnAdjacentCells(x, y));
                 }
                 break;
             case UNKNOWN:

@@ -1,4 +1,7 @@
-package com.miner;
+package com.miner.impl.base;
+
+import com.miner.Constants;
+import com.miner.interfaces.*;
 
 public class BaseAction implements UserAction {
     private final GeneratorBoard generatorBoard;

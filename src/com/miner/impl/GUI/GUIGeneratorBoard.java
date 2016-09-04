@@ -1,7 +1,7 @@
-package com.miner.GUI;
+package com.miner.impl.GUI;
 
-import com.miner.Cell;
-import com.miner.GeneratorBoard;
+import com.miner.interfaces.Cell;
+import com.miner.interfaces.GeneratorBoard;
 
 import java.util.Random;
 

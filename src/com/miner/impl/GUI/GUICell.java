@@ -1,6 +1,6 @@
-package com.miner.GUI;
+package com.miner.impl.GUI;
 
-import com.miner.Cell;
+import com.miner.interfaces.Cell;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,7 +29,7 @@ public class GUICell implements Cell<Graphics> {
 
     @Override
     public void markAsBomb() {
-        this.isBomb =true;
+        this.isBomb = true;
     }
 
     @Override
@@ -71,7 +71,7 @@ public class GUICell implements Cell<Graphics> {
     @Override
     public void draw(Graphics paint) {
         if (this.isSuggestedBomb) {
-            Image image = new ImageIcon(this.getClass().getResource("/com/miner/GUI/drawable/flag.png")).getImage();
+            Image image = new ImageIcon(this.getClass().getResource("/com/miner/impl/GUI/drawable/flag.png")).getImage();
 
             paint.drawImage(image, 1+coordX*CELL_PADDING, 1+coordY*CELL_PADDING, new ImageObserver() {
                 @Override
@@ -82,7 +82,7 @@ public class GUICell implements Cell<Graphics> {
         }
 
         if (this.isSuggestedEmpty && !this.isBomb()) {
-            Image image = new ImageIcon(this.getClass().getResource("/com/miner/GUI/drawable/empty.png")).getImage();
+            Image image = new ImageIcon(this.getClass().getResource("/com/miner/impl/GUI/drawable/empty.png")).getImage();
 
             paint.drawImage(image, 1+coordX*CELL_PADDING, 1+coordY*CELL_PADDING, new ImageObserver() {
                 @Override
@@ -98,7 +98,7 @@ public class GUICell implements Cell<Graphics> {
 
         if (this.isSuggestedEmpty && this.isBomb())
         {
-            Image image = new ImageIcon(this.getClass().getResource("/com/miner/GUI/drawable/bang.png")).getImage();
+            Image image = new ImageIcon(this.getClass().getResource("/com/miner/impl/GUI/drawable/bang.png")).getImage();
 
             paint.drawImage(image, 1+coordX*25, 1+coordY*25, new ImageObserver() {
                 @Override
