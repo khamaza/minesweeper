@@ -1,7 +1,6 @@
 package com.miner.logic;
 
 import com.miner.Constants;
-import com.miner.impl.base.BaseLogic;
 
 public class Hard extends BaseLogic {
     private static final int BOMB_COUNT = 180;
@@ -28,30 +27,5 @@ public class Hard extends BaseLogic {
         if (this.cells[x][y].isBomb() && this.cells[x][y].isSuggestEmpty())
             return true;
         else return false;
-    }
-
-    @Override
-    public void suggest(int x, int y, Constants.SUGGESTION suggestion) {
-        switch (suggestion) {
-            case BOMB:
-                this.cells[x][y].suggestBomb();
-                break;
-            case EMPTY:
-                if (safetySuggestionNumber > 0)
-                {
-                    this.makeSuggestionSafety(x, y);
-                    safetySuggestionNumber--;
-                }
-                cells[x][y].suggestEmpty();
-                if (!cells[x][y].isBomb()) {
-                    cells[x][y].setBombNumberOnAdjacentCells(this.getBombNumberOnAdjacentCells(x, y));
-                }
-                break;
-            case UNKNOWN:
-                cells[x][y].suggestUnknown();
-                break;
-            default:
-                break;
-        }
     }
 }

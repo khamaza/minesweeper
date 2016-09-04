@@ -1,10 +1,12 @@
-package com.miner.impl.base;
+package com.miner.logic;
 
+import com.miner.Constants;
 import com.miner.interfaces.Cell;
 import com.miner.interfaces.MinerLogic;
 
 public abstract class BaseLogic implements MinerLogic {
     protected Cell[][] cells;
+    protected int safetySuggestionNumber;
 
     @Override
     public void loadBoard(Cell[][] cells) {
@@ -60,6 +62,31 @@ public abstract class BaseLogic implements MinerLogic {
                     return;
                 }
             }
+        }
+    }
+
+    @Override
+    public void suggest(int x, int y, Constants.SUGGESTION suggestion) {
+        switch (suggestion) {
+            case BOMB:
+                this.cells[x][y].suggestBomb();
+                break;
+            case EMPTY:
+                if (safetySuggestionNumber > 0)
+                {
+                    this.makeSuggestionSafety(x, y);
+                    safetySuggestionNumber--;
+                }
+                cells[x][y].suggestEmpty();
+                if (!cells[x][y].isBomb()) {
+                    cells[x][y].setBombNumberOnAdjacentCells(this.getBombNumberOnAdjacentCells(x, y));
+                }
+                break;
+            case UNKNOWN:
+                cells[x][y].suggestUnknown();
+                break;
+            default:
+                break;
         }
     }
 }
